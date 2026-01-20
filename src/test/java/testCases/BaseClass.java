@@ -2,8 +2,8 @@ package testCases;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
@@ -47,18 +47,16 @@ public class BaseClass {
 	
 	public void setup(String br) {
 
-				if(br.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",chromedriverpath);
-			driver=new ChromeDriver();
-			driver.manage().window().maximize();
-			wait=new WebDriverWait(driver, 20);	
+		if(br.equals("chrome")) {
+					driver=new ChromeDriver();
+					driver.manage().window().maximize();
+					wait=new WebDriverWait(driver, Duration.ofSeconds(20));	
 		}
 		
 		else if(br.equals("firefox")) {
-			System.setProperty("webdriver.chrome.driver",firefoxpath);
 			driver=new FirefoxDriver();
 			driver.manage().window().maximize(); 
-			wait=new WebDriverWait(driver, 20);	
+			wait=new WebDriverWait(driver, Duration.ofSeconds(20));	
 		}		
 	}		
 	
@@ -71,7 +69,6 @@ public class BaseClass {
 
 	@BeforeClass
 	public void tc(String brr) {
-		//logger=Logger.getLogger("BaseClass");
 		logger=Logger.getLogger(getClass());
 		BasicConfigurator.configure();
 		PropertyConfigurator.configure("log4j.properties");
@@ -117,11 +114,7 @@ public class BaseClass {
 		try {
 			FileInputStream ip = new FileInputStream("./Configuration\\config.properties");
 			prop.load(ip);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch ( IOException e) {
 			e.printStackTrace();
 		}
 		return prop;

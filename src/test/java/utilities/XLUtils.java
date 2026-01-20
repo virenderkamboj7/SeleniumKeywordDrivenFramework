@@ -27,13 +27,11 @@ public class XLUtils {
 		try {
 			fi=new FileInputStream(xlfile);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			wb=new XSSFWorkbook(fi);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ws=wb.getSheet(xlsheet);
@@ -41,13 +39,11 @@ public class XLUtils {
 		try {
 			wb.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			fi.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rowcount;		
@@ -59,13 +55,11 @@ public class XLUtils {
 		try {
 			fi=new FileInputStream(xlfile);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			wb=new XSSFWorkbook(fi);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		ws=wb.getSheet(xlsheet);
@@ -74,13 +68,11 @@ public class XLUtils {
 		try {
 			wb.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			fi.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return cellcount;
@@ -92,13 +84,11 @@ public class XLUtils {
 		try {
 			fi=new FileInputStream(xlfile);
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
 			wb=new XSSFWorkbook(fi);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		ws=wb.getSheet(xlsheet);
@@ -108,8 +98,7 @@ public class XLUtils {
 		try 
 		{
 			DataFormatter formatter = new DataFormatter();
-            String cellData = formatter.formatCellValue(cell);
-            return cellData;
+            return formatter.formatCellValue(cell);
 		}
 		catch (Exception e) 
 		{
@@ -118,13 +107,11 @@ public class XLUtils {
 		try {
 			wb.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			fi.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return data;

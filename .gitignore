@@ -1,0 +1,55 @@
+# General build artifacts and temporary files
+/bin/
+/build/
+/target/
+/out/
+/dist/
+/temp/
+/tmp/
+
+# Dependency caches (adjust as per your language/tool)
+# e.g., for Maven:
+/target/
+# e.g., for Gradle:
+.gradle/
+build/
+
+# IDE-specific files (examples for popular IDEs)
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.settings/
+.classpath
+.project
+bin/
+
+# VS Code
+.vscode/
+
+# Operating System files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+
+# Log files and reports
+*.log
+test-output/ # Common directory for test results (e.g., TestNG)
+/log/
+/logs/
+
+# Selenium-specific files
+# Webdriver logs (e.g., chromedriver.log, geckodriver.log)
+*.log
+chromedriver.log
+geckodriver.log
+msedgedriver.log
+IEDriverServer.log
+
+# Screenshots or recorded videos (if saved to a specific directory)
+/screenshots/
+/videos/
